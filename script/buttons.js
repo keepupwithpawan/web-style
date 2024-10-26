@@ -3,15 +3,15 @@ const about = document.getElementById('about');
 const contact = document.getElementById('contact');
 
 home.addEventListener('click', () => {
-   location.href = '../index.html';
+   location.href = 'index.html';
 });
 
 about.addEventListener('click', () => {
-    location.href = '../about.html';
+    location.href = 'about.html';
 });
 
 contact.addEventListener('click', () => {
-    location.href = '../contact.html';
+    location.href = 'contact.html';
 });
 
 function copyToClipboard(button) {

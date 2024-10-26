@@ -21,27 +21,27 @@ contact.addEventListener('click', () => {
 });
 
 buttons.addEventListener('click', () => {
-    location.href = 'categories/buttons.html';
+    location.href = 'buttons.html';
 });
 
 cards.addEventListener('click', () => {
-    location.href = 'categories/cards.html';
+    location.href = 'cards.html';
 });
 
 carousels.addEventListener('click', () => {
-    location.href = 'categories/carousels.html';
+    location.href = 'carousels.html';
 });
 
 navbars.addEventListener('click', () => {
-    location.href = 'categories/navbars.html';
+    location.href = 'navbars.html';
 });
 
 loaders.addEventListener('click', () => {
-    location.href = 'categories/loaders.html';
+    location.href = 'loaders.html';
 });
 
 footers.addEventListener('click', () => {
-    location.href = 'categories/footers.html';
+    location.href = 'footers.html';
 });
 
 // Cursor Animation
