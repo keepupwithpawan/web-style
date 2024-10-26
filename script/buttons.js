@@ -15,13 +15,15 @@ contact.addEventListener('click', () => {
 });
 
 function copyToClipboard(button) {
-    const codeSnippet = button.parentElement.nextElementSibling.textContent.trim();
-    navigator.clipboard.writeText(codeSnippet).then(() => {
-        button.textContent = "Copied!";
-        setTimeout(() => {
-            button.textContent = "Copy";
-        }, 2000);
-    }).catch(err => console.error("Failed to copy text:", err));
+  const codeSnippet = button.parentElement.nextElementSibling.textContent.trim();
+  navigator.clipboard.writeText(codeSnippet).then(() => {
+      button.classList.add("fa-solid");
+      button.classList.remove("fa-regular");
+      setTimeout(() => {
+          button.classList.remove("fa-solid");
+          button.classList.add("fa-regular");
+      }, 2000);
+  }).catch(err => console.error("Failed to copy text:", err));
 }
 
 // Cursor Animation
