@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/buttons.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/4b1022cf8e.js" crossorigin="anonymous"></script>
+    <title>WebStyle - Buttons</title>
+    <link rel="shortcut icon" href="/images/W.png" type="image/x-icon">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas> <!-- Canvas for particles -->
+    <div id="cursor" class="Cursor"></div>
+    
+    <!-- Navbar Section -->
+    <nav id="navbar">
+        <div id="nav">
+            <div id="logo">W.</div>
+            <ul>
+                <li id="about">About</li>
+                <li id="contact">Contact</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-name">
+        <h1>BUTTONS</h1>
+    </div>
+
+    <!-- Main Container -->
+    <div id="main-container">
+        <div class="button-grid">
+            <!-- Button Template 1 -->
+            <div class="button-template">
+                <button class="styled-button btn-1">Cool Gradient</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-1"&gt;Cool Gradient&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-1 {
+    background: linear-gradient(45deg, #ff6f61, #de7b9a);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+.styled-button.btn-1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 2 -->
+            <div class="button-template">
+                <button class="styled-button btn-2">Soft Shadows</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-2"&gt;Soft Shadows&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-2 {
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.styled-button.btn-2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 3 -->
+            <div class="button-template">
+                <button class="styled-button btn-3">Bold Outline</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-3"&gt;Bold Outline&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-3 {
+    background: transparent;
+    color: #e74c3c;
+    border: 3px solid #e74c3c;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.styled-button.btn-3:hover {
+    background: #e74c3c;
+    color: white;
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 4 -->
+            <div class="button-template">
+                <button class="styled-button btn-4">Glassmorphism</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-4"&gt;Glassmorphism&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-4 {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.styled-button.btn-4:hover {
+    background: rgba(255, 255, 255, 0.5);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 5 -->
+            <div class="button-template">
+                <button class="styled-button btn-5">Bouncy Button</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-5"&gt;Bouncy Button&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-5 {
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+.styled-button.btn-5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 6 -->
+            <div class="button-template">
+                <button class="styled-button btn-6">Ripple Effect</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-6"&gt;Ripple Effect&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-6 {
+    background: #fff;
+    color: #3498db;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.styled-button.btn-6::after {
+    content: "";
+    position: absolute;
+    background: rgba(52, 152, 219, 0.3);
+    border-radius: 50%;
+    width: 300%;
+    height: 300%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+.styled-button.btn-6:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 7 -->
+            <div class="button-template">
+                <button class="styled-button btn-7">Neumorphism</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-7"&gt;Neumorphism&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-7 {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s;
+}
+.styled-button.btn-7:hover {
+    box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.1), inset -8px -8px 15px rgba(255, 255, 255, 0.7);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 8 -->
+            <div class="button-template">
+                <button class="styled-button btn-8">Rounded Rectangle</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-8"&gt;Rounded Rectangle&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-8 {
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+.styled-button.btn-8:hover {
+    background: #732d91;
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 9 -->
+            <div class="button-template">
+                <button class="styled-button btn-9 fa-solid fa-heart"></button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-9"&gt;&lt;i class="fas fa-star"&gt;&lt;/i&gt; Icon Button&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-9 {
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.styled-button.btn-9 i {
+    margin-right: 10px;
+}
+.styled-button.btn-9:hover {
+    background: #d96b1a;
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+
+            <!-- Button Template 10 -->
+            <div class="button-template">
+                <button class="styled-button btn-10">3D Button</button>
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">&lt;button class="styled-button btn-10"&gt;3D Button&lt;/button&gt;</pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.styled-button.btn-10 {
+    background: linear-gradient(180deg, #f5f5f5, #ddd);
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.styled-button.btn-10:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}</pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">// No JavaScript required for this button</pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+      <div id="left">
+        <h3>Made with <span id="heart">&#10084;</span> by pa1.</h3>
+      </div>
+
+      <div id="right">
+        <p>&copy; 2024 WebStyle - All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="/script/buttons.js"></script>
+</body>
+</html>

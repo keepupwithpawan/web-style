@@ -1,0 +1,415 @@
+/* Color Codes: Black #000501; Anti-Flash White #EFEFF0 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+                radial-gradient(at bottom right, #000501, transparent 90%), 
+                radial-gradient(at bottom left, #000501, transparent 100%), 
+                linear-gradient(to bottom, #000501, #EFEFF0), 
+                url(https://grainy-gradients.vercel.app/noise.svg);
+    color: #EFEFF0;
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.Cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Disable pointer interactions */
+    z-index: 1000;
+}
+  
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 15px; /* Adjust the size of the dots */
+    height: 15px; /* Match this with your JS dot size */
+    border-radius: 50%;
+    background-color: #571F4E; /* Color of the dots */
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
+body > #background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Keep canvas behind all elements */
+    pointer-events: none; /* Allow clicks through the canvas */
+}
+
+body > #navbar {
+    width: 100%;
+    height: 10vh;
+    /* background: radial-gradient(circle at 50% 50%, 
+    #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;  
+    color: #000501; */
+    font-weight: bold;
+    /* border-radius: 0 0 10px 10px;
+    animation: wavySwirl 8s ease-in-out infinite; */
+    /* background-color: red; */
+}
+
+body > #navbar > #nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+body > #navbar > #nav > #logo {
+    cursor: pointer;
+    width: 50%;
+    margin-left: 2%;
+    font-size: 25px;
+    /* font-family: 'Zodiak', serif; */
+    font-weight: bold;
+    /* background-color: green; */
+}
+
+body > #navbar > #nav > ul {
+    width: 50%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: blue; */
+}
+
+body > #navbar > #nav > ul > li {
+    cursor: pointer;
+    margin-right: 2%;
+    list-style: none;
+    opacity: 60%;
+}
+
+body > #navbar > #nav > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #navbar > #nav > ul > #about {
+    margin-right: 25%;
+}
+
+body > #page-name {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > #page-name > h1 {
+    font-size: 50px;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+    text-shadow: 2px 2px 7px black; /* Shadow effect */
+    margin-top: 50px;
+}
+
+/* Button Template Grid */
+.button-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px auto 0 auto;
+    padding: 20px 0;
+}
+
+.button-template {
+    background: #131313;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.button-template:hover {
+    transform: scale(1.02);
+}
+
+.styled-button {
+    display: flex;
+    justify-self: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.code-container {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.code-header h3 {
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.copy-btn {
+    background: #2d2d2d;
+    color: #b0b0b0;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.code-snippet {
+    background: #292929;
+    padding: 10px;
+    border-radius: 6px;
+    color: #dcdcdc;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+body > #footer {
+    width: 100%;
+    height: 25vh;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    color: #000501;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 100px;
+    border-radius: 15px 15px 0 0;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+body > #footer > #left {
+    margin-left: 2%;
+}
+
+body > #footer > #right {
+    margin-right: 2%;
+}
+
+#heart {
+    background: radial-gradient(circle at 50% 50%, 
+                #d96b1a, #e52e71, #e67e22, #732d91);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+@keyframes wavySwirl {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+/* CSS for Button Templates */
+.styled-button.btn-1 {
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+.styled-button.btn-1:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(90deg, #e52e71, #ff8a00);
+}
+
+.styled-button.btn-2 {
+    background-color: #f8f9fa;
+    color: #495057;
+    border: 1px solid #dee2e6;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+.styled-button.btn-2:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 10px rgba(255, 255, 255, 0.4);
+}
+
+.styled-button.btn-3 {
+    background: transparent;
+    color: #e74c3c;
+    border: 3px solid #e74c3c;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.styled-button.btn-3:hover {
+    background: #e74c3c;
+    color: white;
+}
+
+.styled-button.btn-4 {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.styled-button.btn-4:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.styled-button.btn-5 {
+    background: #2980b9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+.styled-button.btn-5:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.styled-button.btn-6 {
+    background: #fff;
+    color: #000501;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.styled-button.btn-6::after {
+    content: "";
+    position: absolute;
+    background: rgba(16, 55, 133, 0.3);
+    border-radius: 50%;
+    width: 300%;
+    height: 300%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+}
+.styled-button.btn-6:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.styled-button.btn-7 {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 18px rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.styled-button.btn-7:hover {
+    box-shadow: inset 8px 8px 15px rgba(0, 0, 0, 0.1), inset -8px -8px 10px rgba(255, 255, 255, 0.7);
+}
+
+.styled-button.btn-8 {
+    background: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+.styled-button.btn-8:hover {
+    background: #732d91;
+}
+
+.styled-button.btn-9 {
+    background: #a18cd1;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.styled-button.btn-9 i {
+    margin-right: 10px;
+}
+.styled-button.btn-9:hover {
+    background: #732d91;
+}
+
+.styled-button.btn-10 {
+    background: linear-gradient(180deg, #f5f5f5, #ddd);
+    color: #333;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 16px;
+    box-shadow: 0 5px 10px #EFEFF0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.styled-button.btn-10:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 12px #EFEFF0;
+}
+

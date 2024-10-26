@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/cards.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400&display=swap" rel="stylesheet"/>
+    <link rel="shortcut icon" href="/images/W.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/4b1022cf8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>WebStyle - Cards</title>
+  </head>
+  <body>
+    <canvas id="background-canvas"></canvas> <!-- Canvas for particles -->
+    <div id="cursor" class="Cursor"></div>
+    
+    <!-- Navbar Section -->
+    <nav id="navbar">
+      <div id="nav">
+        <div id="logo">W.</div>
+        <ul>
+          <li id="about">About</li>
+          <li id="contact">Contact</li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="page-name">
+      <h1>CARDS</h1>
+    </div>
+
+    <!-- Main Container -->
+    <div id="main-container">
+      <div class="card-grid">
+        <!-- Card Template 1 -->
+        <div class="card profile-card">
+          <img
+            src="/images/gradient-background.jpg"
+            alt="Profile Picture"
+            class="card-img"
+          />
+          <div class="card-content">
+            <h3 class="card-title">John Doe</h3>
+            <p class="card-description">Web Developer</p>
+            <button class="card-button">Connect</button>
+          </div>
+        </div>
+        <div class="code-container">
+          <div class="code-header">
+            <h3>HTML</h3>
+            <button
+              class="copy-btn fa-regular fa-clipboard"
+              onclick="copyToClipboard(this)"
+            ></button>
+          </div>
+          <pre class="code-snippet">
+  &lt;div class=&quot;card profile-card&quot;&gt;
+    &lt;img src=&quot;#&quot; alt=&quot;Profile Picture&quot; class=&quot;card-img&quot;&gt;
+    &lt;div class=&quot;card-content&quot;&gt;
+        &lt;h3 class=&quot;card-title&quot;&gt;John Doe&lt;/h3&gt;
+        &lt;p class=&quot;card-description&quot;&gt;Web Developer&lt;/p&gt;
+        &lt;button class=&quot;card-button&quot;&gt;Connect&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+            </pre
+          >
+          <div class="code-header">
+            <h3>CSS</h3>
+            <button
+              class="copy-btn fa-regular fa-clipboard"
+              onclick="copyToClipboard(this)"
+            ></button>
+          </div>
+          <pre class="code-snippet">
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    width: 250px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .card:hover {
+      transform: translateY(-10px);
+  }
+  
+  .card-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+  }
+  
+  .card-content {
+      padding: 15px;
+  }
+  
+  .card-title {
+      font-size: 20px;
+      margin: 10px 0;
+  }
+  
+  .card-description {
+      color: #888;
+      margin-bottom: 15px;
+  }
+  
+  .card-button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  
+  .card-button:hover {
+      background-color: #008c9e;
+  }
+            </pre
+          >
+          <div class="code-header">
+            <h3>JavaScript</h3>
+            <button
+              class="copy-btn fa-regular fa-clipboard"
+              onclick="copyToClipboard(this)"
+            ></button>
+          </div>
+          <pre class="code-snippet">
+// No JavaScript required for this Card</pre
+          >
+        </div>
+
+        <!-- Card Template 2 -->
+        <div class="card-grid">
+          <div class="card product-card">
+            <img
+              src="https://w0.peakpx.com/wallpaper/657/437/HD-wallpaper-watch-glow-rolex-time-thumbnail.jpg"
+              alt="Product"
+              class="card-img"
+            />
+            <div class="product-card-content">
+              <h3 class="product-card-title">Stylish Watch</h3>
+              <p class="product-card-price">$49.99</p>
+              <button class="card-button">Buy Now</button>
+            </div>
+          </div>
+          <div class="code-container">
+            <div class="code-header">
+              <h3>HTML</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+  &lt;div class=&quot;card product-card&quot;&gt;
+      &lt;img src=&quot;https://via.placeholder.com/150&quot; alt=&quot;Product&quot; class=&quot;card-img&quot;&gt;
+      &lt;div class=&quot;card-content&quot;&gt;
+          &lt;h3 class=&quot;card-title&quot;&gt;Stylish Watch&lt;/h3&gt;
+          &lt;p class=&quot;card-price&quot;&gt;$49.99&lt;/p&gt;
+          &lt;button class=&quot;card-button&quot;&gt;Buy Now&lt;/button&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+            </pre>
+            <div class="code-header">
+              <h3>CSS</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+  .product-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+  }
+            </pre>
+            <div class="code-header">
+              <h3>JavaScript</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+// No JavaScript required for this Card</pre
+            >
+          </div>
+        </div>
+
+        <!-- Card Template 3 -->
+        <div class="card-grid">
+          <div class="card flip-card product-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://w0.peakpx.com/wallpaper/618/229/HD-wallpaper-rolex-fashion-watches-thumbnail.jpg" alt="Product" class="card-img">
+                    <div class="card-content">
+                        <h3 class="card-title">Stylish Watch</h3>
+                        <p class="card-price">$49.99</p>
+                        <button class="card-button">Buy Now</button>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <h3 class="card-title">About This Watch</h3>
+                    <p class="card-description">A stylish timepiece for every occasion. Durable and fashionable.</p>
+                    <button class="card-button">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        
+          <div class="code-container">
+            <div class="code-header">
+              <h3>HTML</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+  &lt;div class=&quot;card flip-card product-card&quot;&gt;
+  &lt;div class=&quot;flip-card-inner&quot;&gt;
+      &lt;div class=&quot;flip-card-front&quot;&gt;
+          &lt;img src=&quot;https://via.placeholder.com/150&quot; alt=&quot;Product&quot; class=&quot;card-img&quot;&gt;
+          &lt;div class=&quot;card-content&quot;&gt;
+              &lt;h3 class=&quot;card-title&quot;&gt;Stylish Watch&lt;/h3&gt;
+              &lt;p class=&quot;card-price&quot;&gt;$49.99&lt;/p&gt;
+              &lt;button class=&quot;card-button&quot;&gt;Buy Now&lt;/button&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;flip-card-back&quot;&gt;
+          &lt;h3 class=&quot;card-title&quot;&gt;About This Watch&lt;/h3&gt;
+          &lt;p class=&quot;card-description&quot;&gt;A stylish timepiece for every occasion. Durable and fashionable.&lt;/p&gt;
+          &lt;button class=&quot;card-button&quot;&gt;Add to Cart&lt;/button&gt;
+      &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+            </pre>
+            <div class="code-header">
+              <h3>CSS</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+  .card {
+      perspective: 1000px;
+      width: 200px; /* Adjust width as needed */
+      height: 300px; /* Adjust height as needed */
+  }
+  
+  .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+  }
+  
+  .flip-card-front,
+  .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+  }
+  
+  .flip-card-front {
+      background-color: #fff; /* Front card background */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .flip-card-back {
+      background-color: #f3f3f3; /* Back card background */
+      color: #333; /* Text color */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transform: rotateY(180deg);
+  }
+            </pre>
+            <div class="code-header">
+              <h3>JavaScript</h3>
+              <button
+                class="copy-btn fa-regular fa-clipboard"
+                onclick="copyToClipboard(this)"
+              ></button>
+            </div>
+            <pre class="code-snippet">
+// No JavaScript required for this Card</pre
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div id="left">
+        <h3>Made with <span id="heart">&#10084;</span> by pa1.</h3>
+      </div>
+
+      <div id="right">
+        <p>&copy; 2024 WebStyle - All Rights Reserved</p>
+      </div>
+    </footer>
+
+    <script src="/script/cards.js"></script>
+  </body>
+</html>

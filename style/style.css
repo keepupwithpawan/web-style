@@ -1,0 +1,207 @@
+/* Color Codes: Black #000501; Anti-Flash White #EFEFF0 */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+    radial-gradient(at bottom right, #000501, transparent 90%), 
+    radial-gradient(at bottom left, #000501, transparent 100%), 
+    linear-gradient(to bottom, #000501, #EFEFF0), url(https://grainy-gradients.vercel.app/noise.svg);
+    color: #EFEFF0;
+    font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+.Cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Disable pointer interactions */
+    z-index: 1000;
+}
+  
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 15px; /* Adjust the size of the dots */
+    height: 15px; /* Match this with your JS dot size */
+    border-radius: 50%;
+    background-color: #571F4E; /* Color of the dots */
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
+body > #background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Keep canvas behind all elements */
+    pointer-events: none; /* Allow clicks through the canvas */
+}
+
+body > #navbar {
+    width: 100%;
+    height: 10vh;
+    /* background-color: red; */
+}
+
+body > #navbar > #nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+body > #navbar > #nav > #logo {
+    cursor: pointer;
+    width: 50%;
+    margin-left: 2%;
+    font-size: 25px;
+    /* font-family: 'Zodiak', serif; */
+    font-weight: bold;
+    /* background-color: green; */
+}
+
+body > #navbar > #nav > ul {
+    width: 50%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: blue; */
+}
+
+body > #navbar > #nav > ul > li {
+    cursor: pointer;
+    margin-right: 2%;
+    list-style: none;
+    opacity: 60%;
+}
+
+body > #navbar > #nav > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #navbar > #nav > ul > #about {
+    margin-right: 25%;
+}
+
+body > #main-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+body > #main-container > h1 > span {
+    font-size: 50px;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+@keyframes wavySwirl {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+body > #main-container > h1 {
+    width: 60%;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 7px black; /* Shadow effect */
+}
+
+body > #main-container > button {
+    cursor: pointer;
+    background-color: #EFEFF0; /* Base background color */
+    color: #000501;            /* Initial text color */
+    width: 10%;                /* Width of the button */
+    margin-top: 6vh;          /* Margin from the top */
+    padding: 15px 20px;       /* Padding inside the button */
+    border-radius: 10px;      /* Rounded corners */
+    font-family: 'Cabinet Grotesk', sans-serif; /* Font style */
+    font-weight: bold;        /* Bold text */
+    border: none;             /* Remove default border */
+    position: relative;       /* Position relative for pseudo-element */
+    overflow: hidden;         /* Hide overflow for pseudo-element */
+    transition: color 0.4s ease; /* Smooth transition for text color */
+    z-index: 1;               /* Ensure button is above pseudo-element */
+}
+
+body > #main-container > button::before {
+    content: '';              /* Required for pseudo-element */
+    position: absolute;       /* Positioning of the gradient */
+    top: 0;                   /* Align to the top */
+    left: 50%;                /* Center horizontally */
+    width: 300%;              /* Size of the gradient effect */
+    height: 300%;             /* Size of the gradient effect */
+    background: linear-gradient(45deg, #6a1b9a, #ff6f00, #2196f3, #00bcd4, #4caf50);
+    z-index: -1;               /* Behind the button text */
+    transition: transform 0.5s ease; /* Smooth transform */
+    border-radius: 50%;       /* Make it circular */
+    transform: translate(-10%, -70%) scale(0); /* Start scale 0 for effect */
+}
+
+body > #main-container > button:hover::before {
+    transform: translate(-50%, -50%) scale(1); /* Scale up on hover */
+}
+
+body > #main-container > button:hover {
+    color: #EFEFF0;              /* Change text color on hover */
+    background-color: transparent; /* Make background transparent on hover */
+}
+
+body > #footer {
+    width: 100%;
+    height: 25vh;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    color: #000501;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 100px;
+    border-radius: 15px 15px 0 0;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+body > #footer > #left {
+    margin-left: 2%;
+}
+
+body > #footer > #right {
+    margin-right: 2%;
+}
+
+#heart {
+    background: radial-gradient(circle at 50% 50%, 
+                #d96b1a, #e52e71, #e67e22, #732d91);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
