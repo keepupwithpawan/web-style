@@ -225,3 +225,86 @@ background-position: 0% 0%;
 }
 }
 
+/*Responsive design for mobile devices*/
+@media (max-width: 800px) {
+    body > #main-container > button {
+        width: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    /* Adjust font size of nav elements*/
+    body > #navbar > #nav > #logo {
+        margin-left: 4%;
+   }
+
+   body > #navbar > #nav > ul > li {
+    margin-right: 4%;    
+    }
+
+body > #main-container > h1 {
+    width: 55%;
+    font-size: 40px;
+}
+
+body > #main-container > #content-container {
+    margin-top: 2vh;
+}
+
+body > #main-container > #content-container > .content {
+    width: 94%;
+    height: 9vh;
+}
+
+body > #main-container > #content-container > .content > .left {
+    font-size: 35px;
+}
+
+body > #footer {
+    margin-top: 50px;
+}
+
+body > #footer > #left {
+    width: 22%;
+    margin-left: 4%;
+}
+
+body > #footer > #right {
+    width: 25%;
+    margin-right: 4%;
+}
+}
+
+@media (max-width: 400px) {
+    body > #navbar > #nav {
+        width: 98%;
+        font-size: 10px;
+    }
+
+    body > #navbar > #nav > #logo {
+        font-size: 15px;
+        margin-left: 4%;
+   }
+
+   body > #navbar > #nav > ul > li {
+    margin-right: 4%;    
+    }
+
+    body > #main-container > h1 {
+        font-size: 30px;
+    }
+
+    body > #main-container > h1 > span {
+        font-size: 30px;
+    }
+
+    body > #main-container > #content-container > .content > .left {
+        font-size: 30px;
+    }
+
+    body > #main-container > button {
+        width: 30%;
+    }
+}
+
+

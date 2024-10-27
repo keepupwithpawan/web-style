@@ -255,3 +255,137 @@ body > #footer > #right {
     animation: wavySwirl 8s ease-in-out infinite;
 }
 
+/* Responsiveness */
+@media screen and (max-width: 700px) {
+    body > #navbar > #nav {
+        width: 98%;
+        font-size: 10px;
+    }
+
+    body > #navbar > #nav > #logo {
+        font-size: 15px;
+        margin-left: 4%;
+   }
+
+   body > #navbar > #nav > ul > li {
+    margin-right: 4%;    
+    }
+
+    body > #main-container {
+        margin-top: 50px;
+    }
+
+    body > #main-container > #contact-container {
+        flex-direction: column;
+    }
+
+    body > #main-container > #contact-container > #left {
+        width: 96%;
+        height: 50vh;
+        margin-left: 0%;
+        margin-right: 2%;
+        margin-bottom: 5vh;
+    }
+
+    body > #main-container > #contact-container > #left > h2 {
+        font-size: 25px;
+    }
+
+    body > #main-container > #contact-container > #left > input, textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    body > #main-container > #contact-container > #left > .send-button {
+        font-size: 14px;
+    }
+
+    body > #main-container > #contact-container > #right {
+        width: 96%;
+        height: 45vh;
+        margin-bottom: 1vh;
+    }
+
+    body > #footer {
+        margin-top: 50px;
+    }
+    
+    body > #footer > #left {
+        width: 22%;
+        margin-left: 4%;
+    }
+    
+    body > #footer > #right {
+        width: 25%;
+        margin-right: 4%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    body > #nav-container > #nav-bar > #name {
+        font-size: 15px;
+        margin-left: 4vw;
+    }
+    body > #nav-container > #nav-bar > #ul-container > ul {
+        margin-right: 4vw;
+    }
+
+    body > #nav-container > #nav-bar > #ul-container > ul > li {
+        font-size: 10px;
+    }
+
+    body > #main-container {
+        margin-top: -2vh;
+        margin-bottom: -2vh;
+        height: 70vh;
+    }
+
+    body > #main-container > #contact-container {
+        flex-direction: column;
+    }
+
+    body > #main-container > #contact-container > #left {
+        width: 96%;
+        height: 40vh;
+        margin-left: 0%;
+        margin-right: 2%;
+        margin-bottom: 5vh;
+    }
+
+    body > #main-container > #contact-container > #left > h2 {
+        font-size: 15px;
+    }
+
+    body > #main-container > #contact-container > #left > input, textarea {
+        width: 100%;
+        padding: 5px;
+        font-size: 9px;
+    }
+
+    body > #main-container > #contact-container > #left > .send-button {
+        margin-top: 1vh;
+        margin-bottom: -2vh;
+        align-self: center;
+        padding: 10px;
+        font-size: 9px;
+    }
+
+    body > #main-container > #contact-container > #left {
+        height: 35vh;
+    }
+
+    body > #footer {
+        margin-top: 50px;
+    }
+    
+    body > #footer > #left {
+        width: 22%;
+        margin-left: 4%;
+    }
+    
+    body > #footer > #right {
+        width: 25%;
+        margin-right: 4%;
+    }
+}

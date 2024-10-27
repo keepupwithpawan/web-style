@@ -228,3 +228,76 @@ body > #footer > #right {
     animation: wavySwirl 8s ease-in-out infinite;
 }
 
+/*Responsive design for mobile devices*/
+@media (max-width: 1000px) {
+    /* Adjust font size of nav elements*/
+    body > #navbar > #nav {
+        width: 98%;
+        font-size: 10px;
+    }
+
+    body > #navbar > #nav > #logo {
+        font-size: 15px;
+        margin-left: 4%;
+   }
+
+   body > #navbar > #nav > ul > li {
+    margin-right: 4%;    
+    }
+
+body > #main-container {
+    height: max-content;
+    flex-direction: column;
+}
+
+body > #main-container > #left {
+    width: 85%;
+    height: max-content;
+    text-align: center;
+    margin-top: 40px;
+}
+
+body > #main-container > #left > button {
+    display: none;
+}
+
+body > #main-container > #right {
+    width: 85%;
+    height: 50vh;
+    margin-top: 50px;
+}
+
+body > #footer {
+    margin-top: 50px;
+}
+
+body > #footer > #left {
+    width: 22%;
+    margin-left: 4%;
+}
+
+body > #footer > #right {
+    width: 25%;
+    margin-right: 4%;
+}
+}
+
+@media (max-width: 400px) {
+    body > #navbar > #nav {
+        width: 98%;
+        font-size: 10px;
+    }
+
+    body > #main-container > h1 {
+        font-size: 30px;
+    }
+
+    body > #main-container > h1 > span {
+        font-size: 30px;
+    }
+
+    body > #main-container > button {
+        width: 30%;
+    }
+}
+
