@@ -227,6 +227,10 @@ background-position: 0% 0%;
 
 /*Responsive design for mobile devices*/
 @media (max-width: 800px) {
+    .Cursor {
+        display: none;
+    }
+
     body > #main-container > button {
         width: 20%;
     }

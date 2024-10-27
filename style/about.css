@@ -230,6 +230,10 @@ body > #footer > #right {
 
 /*Responsive design for mobile devices*/
 @media (max-width: 1000px) {
+    .Cursor {
+        display: none;
+    }
+    
     /* Adjust font size of nav elements*/
     body > #navbar > #nav {
         width: 98%;

@@ -53,7 +53,7 @@ class Dot {
     this.element.style.height = `${dotSize}px`;
     this.element.style.position = 'absolute';
     this.element.style.borderRadius = '50%';
-    this.element.style.backgroundColor = '#571F4E';
+    this.element.style.backgroundColor = '#EFEFF0';
     this.element.style.opacity = 1;  // Initially visible
     cursor.appendChild(this.element);  // Append each dot to the cursor div
   }
