@@ -14,6 +14,7 @@ body {
                 url(https://grainy-gradients.vercel.app/noise.svg);
     color: #EFEFF0;
     font-family: 'Cabinet Grotesk', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .Cursor {

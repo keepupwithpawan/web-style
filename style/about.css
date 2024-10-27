@@ -12,6 +12,7 @@ body {
     linear-gradient(to bottom, #000501, #EFEFF0), url(https://grainy-gradients.vercel.app/noise.svg);
     color: #EFEFF0;
     font-family: 'Cabinet Grotesk', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .Cursor {
@@ -233,7 +234,7 @@ body > #footer > #right {
     .Cursor {
         display: none;
     }
-    
+
     /* Adjust font size of nav elements*/
     body > #navbar > #nav {
         width: 98%;
