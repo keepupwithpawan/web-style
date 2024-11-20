@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Style - Footers</title>
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/footers.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/images/W.png" type="image/x-icon">
+    <script
+    src="https://kit.fontawesome.com/4b1022cf8e.js"
+    crossorigin="anonymous"
+  ></script>
 </head>
+
 <body>
     <canvas id="background-canvas"></canvas> <!-- Canvas for particles -->
     <div id="cursor" class="Cursor"></div>
@@ -25,20 +31,390 @@
         </div>
     </div>
 
+    <div id="page-name">
+        <h1>FOOTERS</h1>
+    </div>
+
+    <!-- Main Container -->
     <div id="main-container">
-        <h1><span>Coming Soon</span></h1>
+        <div class="card-grid">
+            <!-- Card Template 1 -->
+            <footer class="footer footer-1">
+                <h2>Company Name</h2>
+                <p>© 2024 All Rights Reserved</p>
+                <div class="social-icons">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </footer>
+            <div class="code-container">
+                <div class="code-header">
+                    <h3>HTML</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+&lt;footer class=&quot;footer footer-1&quot;&gt;
+&lt;h2&gt;Company Name&lt;/h2&gt;
+&lt;p&gt;© 2024 All Rights Reserved&lt;/p&gt;
+&lt;div class=&quot;social-icons&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Facebook&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Twitter&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Instagram&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;LinkedIn&lt;/a&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+          </pre>
+                <div class="code-header">
+                    <h3>CSS</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+.footer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.footer-1 .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.footer-1 .social-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.footer-1 .social-icons a:hover {
+    transform: scale(1.2);
+}
+          </pre>
+                <div class="code-header">
+                    <h3>JavaScript</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+// No JavaScript required for this Footer</pre>
+            </div>
+
+            <!-- Card Template 2 -->
+            <footer class="footer footer-2">
+                <div class="column">
+                    <h3>About</h3>
+                    <a href="#">Company</a>
+                    <a href="#">Team</a>
+                    <a href="#">Careers</a>
+                </div>
+                <div class="column">
+                    <h3>Contact</h3>
+                    <a href="#">Support</a>
+                    <a href="#">Email</a>
+                    <a href="#">Phone</a>
+                </div>
+            </footer>
+            <div class="code-container">
+                <div class="code-header">
+                    <h3>HTML</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+&lt;footer class=&quot;footer footer-2&quot;&gt;
+&lt;div class=&quot;column&quot;&gt;
+    &lt;h3&gt;About&lt;/h3&gt;
+    &lt;a href=&quot;#&quot;&gt;Company&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Team&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Careers&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;column&quot;&gt;
+    &lt;h3&gt;Contact&lt;/h3&gt;
+    &lt;a href=&quot;#&quot;&gt;Support&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Email&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Phone&lt;/a&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+          </pre>
+                <div class="code-header">
+                    <h3>CSS</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+.footer {
+    padding: 2rem;
+    text-align: center;
+}
+.footer-2 {
+    background: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-2 .column h3 {
+    color: #000501;
+}
+.footer-2 .column a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin: 10px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+.footer-2 .column a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #4A90E2;
+    transition: width 0.3s;
+}
+.footer-2 .column a:hover::after {
+    width: 100%;
+}
+          </pre>
+                <div class="code-header">
+                    <h3>JavaScript</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+// No JavaScript required for this Footer</pre>
+            </div>
+
+            <!-- Card Template 3 -->
+            <footer class="footer footer-3">
+                <div class="footer-logo">Brand</div>
+                <div class="footer-links">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>
+                </div>
+            </footer>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <h3>HTML</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+&lt;footer class=&quot;footer footer-2&quot;&gt;
+&lt;div class=&quot;column&quot;&gt;
+  &lt;h3&gt;About&lt;/h3&gt;
+  &lt;a href=&quot;#&quot;&gt;Company&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Team&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Careers&lt;/a&gt;
+&lt;/div&gt;
+&lt;div class=&quot;column&quot;&gt;
+  &lt;h3&gt;Contact&lt;/h3&gt;
+  &lt;a href=&quot;#&quot;&gt;Support&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Email&lt;/a&gt;
+  &lt;a href=&quot;#&quot;&gt;Phone&lt;/a&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+        </pre>
+                <div class="code-header">
+                    <h3>CSS</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+.footer {
+  padding: 2rem;
+  text-align: center;
+}
+.footer-3 {
+    background: #1a1a2e;
+    color: #e2e2e2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+.footer-3 .footer-links {
+    display: flex;
+    gap: 20px;
+}
+.footer-3 .footer-links a {
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+        </pre>
+                <div class="code-header">
+                    <h3>JavaScript</h3>
+                    <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                </div>
+                <pre class="code-snippet">
+// No JavaScript required for this Footer</pre>
+            </div>
+
+
+        <!-- Card Template 3 -->
+        <footer class="footer footer-4">
+            <h2>Connect With Us</h2>
+            <div class="social-circle">
+                <a href="#">FB</a>
+                <a href="#">TW</a>
+                <a href="#">IG</a>
+                <a href="#">LN</a>
+            </div>
+        </footer>
+
+        <div class="code-container">
+            <div class="code-header">
+                <h3>HTML</h3>
+                <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+            </div>
+            <pre class="code-snippet">
+&lt;footer class=&quot;footer footer-4&quot;&gt;
+&lt;h2&gt;Connect With Us&lt;/h2&gt;
+&lt;div class=&quot;social-circle&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;FB&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;TW&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;IG&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;LN&lt;/a&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+    </pre>
+            <div class="code-header">
+                <h3>CSS</h3>
+                <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+            </div>
+            <pre class="code-snippet">
+.footer {
+padding: 2rem;
+text-align: center;
+}
+.footer-4 {
+    background: linear-gradient(to right, #ff6b6b, #feca57);
+    color: white;
+}
+.footer-4 .social-circle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.footer-4 .social-circle a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s;
+}
+.footer-4 .social-circle a:hover {
+    transform: scale(1.1);
+}
+    </pre>
+            <div class="code-header">
+                <h3>JavaScript</h3>
+                <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+            </div>
+            <pre class="code-snippet">
+// No JavaScript required for this Footer</pre>
+        </div>
+            
+                <!-- Card Template 5 -->
+                <footer class="footer footer-5">
+                    <div class="link-group">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </footer>
+        
+                <div class="code-container">
+                    <div class="code-header">
+                        <h3>HTML</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+&lt;footer class=&quot;footer footer-5&quot;&gt;
+&lt;div class=&quot;link-group&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Services&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;
+&lt;/div&gt;
+&lt;/footer&gt;
+            </pre>
+                    <div class="code-header">
+                        <h3>CSS</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+.footer {
+padding: 2rem;
+text-align: center;
+}
+.footer-5 {
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-5 .link-group {
+    display: flex;
+    gap: 30px;
+}
+.footer-5 .link-group a {
+    color: #495057;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+.footer-5 .link-group a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #228be6;
+    transition: all 0.3s;
+}
+.footer-5 .link-group a:hover {
+    color: #228be6;
+}
+.footer-5 .link-group a:hover::before {
+    width: 100%;
+    left: 0;
+}
+            </pre>
+                    <div class="code-header">
+                        <h3>JavaScript</h3>
+                        <button class="copy-btn fa-regular fa-clipboard" onclick="copyToClipboard(this)"></button>
+                    </div>
+                    <pre class="code-snippet">
+        // No JavaScript required for this Footer</pre>
+                </div>
+    </div>
+    </div>
+    </div>
     </div>
 
     <footer id="footer">
         <div id="left">
-          <h3>Made with <span id="heart">&#10084;</span> by pa1.</h3>
+            <h3>Made with <span id="heart">&#10084;</span> by pa1.</h3>
         </div>
-  
+
         <div id="right">
-          <p>&copy; 2024 WebStyle - All Rights Reserved</p>
+            <p>&copy; 2024 WebStyle - All Rights Reserved</p>
         </div>
-      </footer>
+    </footer>
 
     <script src="/script/carousels.js"></script>
 </body>
+
 </html>

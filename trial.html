@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minimal Footers Collection</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .footer {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .footer-1 .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .footer-1 .social-icons a {
+            color: white;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .footer-1 .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .footer-2 {
+            background: #f4f4f4;
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer-2 .column a {
+            display: block;
+            color: #333;
+            text-decoration: none;
+            margin: 10px 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .footer-2 .column a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4A90E2;
+            transition: width 0.3s;
+        }
+        .footer-2 .column a:hover::after {
+            width: 100%;
+        }
+
+        .footer-3 {
+            background: #1a1a2e;
+            color: #e2e2e2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+        }
+        .footer-3 .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+        .footer-3 .footer-links a {
+            color: #e2e2e2;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-4 {
+            background: linear-gradient(to right, #ff6b6b, #feca57);
+            color: white;
+        }
+        .footer-4 .social-circle {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .footer-4 .social-circle a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.3s;
+        }
+        .footer-4 .social-circle a:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-5 {
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-5 .link-group {
+            display: flex;
+            gap: 30px;
+        }
+        .footer-5 .link-group a {
+            color: #495057;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .footer-5 .link-group a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background-color: #1a1a2e;
+            transition: all 0.3s;
+        }
+        .footer-5 .link-group a:hover {
+            color: #1a1a2e;
+        }
+        .footer-5 .link-group a:hover::before {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <footer class="footer footer-1">
+        <h2>Company Name</h2>
+        <p>© 2024 All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </footer>
+
+    <footer class="footer footer-2">
+        <div class="column">
+            <h3>About</h3>
+            <a href="#">Company</a>
+            <a href="#">Team</a>
+            <a href="#">Careers</a>
+        </div>
+        <div class="column">
+            <h3>Contact</h3>
+            <a href="#">Support</a>
+            <a href="#">Email</a>
+            <a href="#">Phone</a>
+        </div>
+    </footer>
+
+    <footer class="footer footer-3">
+        <div class="footer-logo">Brand</div>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <footer class="footer footer-4">
+        <h2>Connect With Us</h2>
+        <div class="social-circle">
+            <a href="#">FB</a>
+            <a href="#">TW</a>
+            <a href="#">IG</a>
+            <a href="#">LN</a>
+        </div>
+    </footer>
+
+    <footer class="footer footer-5">
+        <div class="link-group">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('footer a').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Link clicked!');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+/* Color Codes: Black #000501; Anti-Flash White #EFEFF0 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(at top left, #000501, transparent 100%), 
+                radial-gradient(at bottom right, #000501, transparent 90%), 
+                radial-gradient(at bottom left, #000501, transparent 100%), 
+                linear-gradient(to bottom, #000501, #EFEFF0), 
+                url(https://grainy-gradients.vercel.app/noise.svg);
+    color: #EFEFF0;
+    font-family: 'Cabinet Grotesk', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.Cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Disable pointer interactions */
+    z-index: 1000;
+}
+  
+.Cursor span {
+    position: absolute;
+    display: block;
+    width: 15px; /* Adjust the size of the dots */
+    height: 15px; /* Match this with your JS dot size */
+    border-radius: 50%;
+    background-color: #571F4E; /* Color of the dots */
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+}
+
+body > #background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1; /* Keep canvas behind all elements */
+    pointer-events: none; /* Allow clicks through the canvas */
+}
+
+body > #navbar {
+    width: 100%;
+    height: 10vh;
+    /* background: radial-gradient(circle at 50% 50%, 
+    #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;  
+    color: #000501; */
+    font-weight: bold;
+    /* border-radius: 0 0 10px 10px;
+    animation: wavySwirl 8s ease-in-out infinite; */
+    /* background-color: red; */
+}
+
+body > #navbar > #nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+body > #navbar > #nav > #logo {
+    cursor: pointer;
+    width: 50%;
+    margin-left: 2%;
+    font-size: 25px;
+    /* font-family: 'Zodiak', serif; */
+    font-weight: bold;
+    /* background-color: green; */
+}
+
+body > #navbar > #nav > ul {
+    width: 50%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    /* background-color: blue; */
+}
+
+body > #navbar > #nav > ul > li {
+    cursor: pointer;
+    margin-right: 2%;
+    list-style: none;
+    opacity: 60%;
+}
+
+body > #navbar > #nav > ul > li:hover {
+    opacity: 100%;
+}
+
+body > #navbar > #nav > ul > #about {
+    margin-right: 25%;
+}
+
+body > #page-name {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > #page-name > h1 {
+    font-size: 50px;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+    text-shadow: 2px 2px 7px black; /* Shadow effect */
+    margin-top: 50px;
+}
+
+/* card Template Grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px auto 0 auto;
+    padding: 20px 0;
+}
+
+.card-template {
+    background: #131313;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.card-template:hover {
+    transform: scale(1.02);
+}
+
+.styled-card {
+    display: flex;
+    justify-self: center;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.code-container {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.code-header h3 {
+    font-size: 16px;
+    color: #f0f0f0;
+}
+
+.copy-btn {
+    background: #2d2d2d;
+    color: #b0b0b0;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-btn:hover {
+    background: #3a3a3a;
+    color: #fff;
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.code-snippet {
+    background: #292929;
+    padding: 10px;
+    border-radius: 6px;
+    color: #dcdcdc;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    scrollbar-width: none;
+}
+
+body > #footer {
+    width: 100%;
+    height: 25vh;
+    background: radial-gradient(circle at 50% 50%, 
+                #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #fbc2eb, #fad0c4, #ff9a9e);
+    background-size: 300%;
+    color: #000501;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 100px;
+    border-radius: 15px 15px 0 0;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+body > #footer > #left {
+    margin-left: 2%;
+}
+
+body > #footer > #right {
+    margin-right: 2%;
+}
+
+#heart {
+    background: radial-gradient(circle at 50% 50%, 
+                #d96b1a, #e52e71, #e67e22, #732d91);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: wavySwirl 8s ease-in-out infinite;
+}
+
+@keyframes wavySwirl {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/*Responsive design for mobile devices*/
+@media (max-width: 1000px) {
+    .Cursor {
+        display: none;
+    }
+
+    /* Adjust font size of nav elements*/
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body > #navbar > #nav > #logo {
+        margin-left: 4%;
+   }
+
+   body > #navbar > #nav > ul > li {
+    margin-right: 4%;    
+    }
+
+    body > #page-name {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+body > #main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-grid {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-template {
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.code-container {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.code-header {
+    width: 98%;
+    margin-top: 10px;
+}
+
+.code-snippet {
+    width: 99%;
+    margin-top: 15px;
+}
+
+body > #footer {
+    margin-top: 50px;
+}
+
+body > #footer > #left {
+    width: 22%;
+    margin-left: 4%;
+}
+
+body > #footer > #right {
+    width: 25%;
+    margin-right: 4%;
+}
+}
+
+@media (max-width: 400px) {
+    body > #navbar > #nav {
+        width: 98%;
+        font-size: 10px;
+    }
+
+    body > #main-container > h1 {
+        font-size: 30px;
+    }
+
+    body > #main-container > h1 > span {
+        font-size: 30px;
+    }
+
+    body > #main-container > button {
+        width: 30%;
+    }
+}
+
+/* CSS for Footer Templates */
+.footer {
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+.footer-1 .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.footer-1 .social-icons a {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+.footer-1 .social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.footer-2 {
+    background: #f4f4f4;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-2 .column h3 {
+    color: #000501;
+}
+.footer-2 .column a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    margin: 10px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+.footer-2 .column a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #4A90E2;
+    transition: width 0.3s;
+}
+.footer-2 .column a:hover::after {
+    width: 100%;
+}
+
+.footer-3 {
+    background: #1a1a2e;
+    color: #b0b0b0;
+    display: flex;
+    justify-content: space-around;
+}
+.footer-3 .footer-links {
+    display: flex;
+    gap: 20px;
+}
+.footer-3 .footer-links a {
+    color: #e2e2e2;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-4 {
+    background: linear-gradient(to right, #ff6b6b, #feca57);
+    color: white;
+}
+.footer-4 .social-circle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.footer-4 .social-circle a {
+    width: 50px;
+    height: 50px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s;
+}
+.footer-4 .social-circle a:hover {
+    transform: scale(1.1);
+}
+
+.footer-5 {
+    background: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-5 .link-group {
+    display: flex;
+    gap: 30px;
+}
+.footer-5 .link-group a {
+    color: #495057;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s;
+}
+.footer-5 .link-group a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #1a1a2e;
+    transition: all 0.3s;
+}
+.footer-5 .link-group a:hover {
+    color: #1a1a2e;
+}
+.footer-5 .link-group a:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
